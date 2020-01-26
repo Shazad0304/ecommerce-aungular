@@ -22,11 +22,21 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
+              
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/karma/js/vendor/jquery-2.2.4.min.js",
+              "src/karma/js/vendor/bootstrap.min.js",
+              "src/karma/js/jquery.ajaxchimp.min.js",
+              "src/karma/js/countdown.js",
+              "src/karma/js/jquery.magnific-popup.min.js",
+              "src/karma/js/owl.carousel.min.js",
+        
+            
+            ]
           },
           "configurations": {
             "production": {
