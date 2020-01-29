@@ -28,12 +28,13 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/karma/js/vendor/jquery-2.2.4.min.js",
-              "src/karma/js/vendor/bootstrap.min.js",
-              "src/karma/js/jquery.ajaxchimp.min.js",
-              "src/karma/js/countdown.js",
-              "src/karma/js/jquery.magnific-popup.min.js",
-              "src/karma/js/owl.carousel.min.js",
+              "src/assets/karma/js/vendor/jquery-2.2.4.min.js",
+              "src/assets/karma/js/vendor/bootstrap.min.js",
+              "src/assets/karma/js/jquery.ajaxchimp.min.js",
+              "src/assets/karma/js/countdown.js",
+              "src/assets/karma/js/jquery.magnific-popup.min.js",
+              "src/assets/karma/js/owl.carousel.min.js"
+              
         
             
             ]

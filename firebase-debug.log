@@ -1,0 +1,10 @@
+[debug] [2020-01-28T23:11:41.647Z] ----------------------------------------------------------------------
+[debug] [2020-01-28T23:11:41.649Z] Command:       /usr/local/bin/node /home/shazad/.npm-global/bin/firebase deploy
+[debug] [2020-01-28T23:11:41.649Z] CLI Version:   7.12.1
+[debug] [2020-01-28T23:11:41.649Z] Platform:      linux
+[debug] [2020-01-28T23:11:41.649Z] Node Version:  v12.14.1
+[debug] [2020-01-28T23:11:41.650Z] Time:          Tue Jan 28 2020 18:11:41 GMT-0500 (Eastern Standard Time)
+[debug] [2020-01-28T23:11:41.650Z] ----------------------------------------------------------------------
+[debug] [2020-01-28T23:11:41.650Z] 
+[error] 
+[error] Error: Not in a Firebase app directory (could not locate firebase.json)

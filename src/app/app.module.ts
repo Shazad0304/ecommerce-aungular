@@ -11,6 +11,15 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { LoginComponent } from './login/login.component';
 import { TackingComponent } from './tacking/tacking.component';
 import { ContactComponent } from './contact/contact.component';
+import { AddproductsComponent } from './addproducts/addproducts.component';
+import { SaveproductsService } from './saveproducts.service';
+import { HttpClientModule } from '@angular/common/http';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {AngularFirestoreModule} from '@angular/fire/firestore'
+import { environment } from 'src/environments/environment';
+import {AngularFireStorageModule} from '@angular/fire/storage'
+
 
 @NgModule({
   declarations: [
@@ -22,13 +31,20 @@ import { ContactComponent } from './contact/contact.component';
     ConfirmComponent,
     LoginComponent,
     TackingComponent,
-    ContactComponent
+    ContactComponent,
+    AddproductsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule, //must
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule
+
   ],
-  providers: [],
+  providers: [SaveproductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

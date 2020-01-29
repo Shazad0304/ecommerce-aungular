@@ -8,6 +8,7 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { TackingComponent } from './tacking/tacking.component';
+import { AddproductsComponent } from './addproducts/addproducts.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: "confirm",component: ConfirmComponent},
   {path:"contact",component:ContactComponent},
   {path:"login",component:LoginComponent},
-  {path:"tracking",component:TackingComponent}
+  {path:"tracking",component:TackingComponent},
+  {path: "addproducts",component: AddproductsComponent}
  
 ];
 
