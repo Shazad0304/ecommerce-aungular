@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/firestore';
 import {AngularFireStorage,AngularFireStorageReference,AngularFireUploadTask} from '@angular/fire/storage';
 import { Observable } from 'rxjs';
+import { async } from '@angular/core/testing';
 
 
 
@@ -14,19 +15,20 @@ export class SaveproductsService {
   task: AngularFireUploadTask;
   load: Observable<number>;
   downloadUrl: Observable<string>;
-
+  imgName =[];
   constructor(private http:HttpClient,private db:AngularFirestore,private af:AngularFireStorage) {}
 
-  saveData(data,img){
+   saveData(data,img){
     for(let imgs of img){
       const id = Math.random().toString(36).substring(2);
+      this.imgName.push(id);
       this.ref = this.af.ref(id);
-      this.task = this.ref.put(imgs);
-      this.load = this.task.percentageChanges();
+      this.task =  this.ref.put(imgs);
+      //this.load = this.task.percentageChanges();
+      //this.downloadUrl = this.ref.getDownloadURL();
       
-      this.downloadUrl = this.ref.getDownloadURL();
-      console.log(this.downloadUrl);
       }
+     
 
 
     for(let index in data){
@@ -36,11 +38,12 @@ export class SaveproductsService {
           price:data[index].price,
           modelno: data[index].modelno,
           company: data[index].company,
-         
+          imgname: this.imgName[index]
         }
         )
   
     }
+    this.imgName = [];
   
     return 'success';
    

@@ -22,7 +22,7 @@ export class AddproductsComponent implements OnInit {
   productss = [];
   productImg = [];
   check = false;
-
+  image: string;
   products = [];
   public fetch = [];
   public sFile: File = null;
@@ -38,7 +38,8 @@ export class AddproductsComponent implements OnInit {
         modelno: model.value,
         company: company.value
       });
-     
+     // for get image this.af.ref('0jev2o7y066e').getDownloadURL().subscribe(x => this.image = x);
+
     }
     else{
       alert('All fields are required');
