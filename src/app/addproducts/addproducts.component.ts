@@ -18,16 +18,17 @@ export class AddproductsComponent implements OnInit {
   load: Observable<number>;
   downloadUrl: Observable<string>;
   constructor(private _save:SaveproductsService,private af:AngularFireStorage) { }
-
+  public ab = [];
   productss = [];
-  productImg = [];
+  image = null;
   check = false;
-  image: string;
   products = [];
   public fetch = [];
   public sFile: File = null;
   items: Array<any>;
   ngOnInit() {
+    this._save.getData().subscribe(x => this.items = x.map(o => o.payload.doc.data()));
+    console.log(this.items);
   }
 
   add(name,price,model,company){
@@ -36,10 +37,13 @@ export class AddproductsComponent implements OnInit {
         name:name.value,
         price: price.value,
         modelno: model.value,
-        company: company.value
+        company: company.value,
+        Image: this.image
       });
      // for get image this.af.ref('0jev2o7y066e').getDownloadURL().subscribe(x => this.image = x);
-
+      
+     console.log(this.items);
+    
     }
     else{
       alert('All fields are required');
@@ -49,7 +53,6 @@ export class AddproductsComponent implements OnInit {
   }
   del(i){
     this.productss.splice(i,1);
-    this.productImg.splice(i,1);
     console.log(this.productss);
   }
   save(){
@@ -58,10 +61,10 @@ export class AddproductsComponent implements OnInit {
     }
     else{
     if(confirm('Are you sure to save data')){
-    if(this._save.saveData(this.productss,this.productImg) == 'success'){
+    if(this._save.saveData(this.productss) == 'success'){
       alert('Submitted');
       this.productss = [];
-      this.productImg = [];
+     
     }
     
     }
@@ -69,7 +72,7 @@ export class AddproductsComponent implements OnInit {
   }
   addImg(img){
     if(img != null){
-      this.productImg.push(img.target.files[0]);
+      this.image = img.target.files[0];
       this.check = true;
     }
   
@@ -95,9 +98,6 @@ export class AddproductsComponent implements OnInit {
       fname: fname.value,
       lname : lname.value
     });
-    console.log(this.products);
-  }
- onSubmit(){
 //this._save.saveData(this.products);
 
  }
