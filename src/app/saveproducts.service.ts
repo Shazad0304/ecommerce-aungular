@@ -15,13 +15,16 @@ export class SaveproductsService {
   task: AngularFireUploadTask;
   load: Observable<number>;
   downloadUrl: Observable<string>;
+  
   constructor(private http:HttpClient,private db:AngularFirestore,private af:AngularFireStorage) {}
 
    saveData(data){
 
     for(let items of data){
       const id = Math.random().toString(36).substring(2);
-      this.db.collection('product').add(
+        this.ref = this.af.ref(id);
+        this.task =  this.ref.put(items.Image);
+        this.db.collection('product').add(
         {
           name:items.name,
           price:items.price,
@@ -30,8 +33,6 @@ export class SaveproductsService {
           imgname: id
         }
         )
-        this.ref = this.af.ref(id);
-        this.task =  this.ref.put(items.Image);
   
     }
   

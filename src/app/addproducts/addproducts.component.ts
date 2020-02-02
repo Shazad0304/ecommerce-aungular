@@ -27,8 +27,7 @@ export class AddproductsComponent implements OnInit {
   public sFile: File = null;
   items: Array<any>;
   ngOnInit() {
-    this._save.getData().subscribe(x => this.items = x.map(o => o.payload.doc.data()));
-    console.log(this.items);
+ 
   }
 
   add(name,price,model,company){
@@ -104,7 +103,7 @@ export class AddproductsComponent implements OnInit {
 
  onGet(){
    
-  this._save.getData().subscribe(x => this.items = x);
+ // this._save.getData().subscribe(x => this.items = x);
   
  }
 updates(key){

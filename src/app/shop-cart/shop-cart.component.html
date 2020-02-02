@@ -198,20 +198,20 @@
             <!-- End Filter Bar -->
             <!-- Start Best Seller -->
             <section  class="lattest-product-area pb-40 category-list">
-                <div  class="row">
+                <div class="row">
                     <!-- single product -->
-                    <div *ngFor='let it of items'  class="col-lg-4 col-md-6">
+                    <div *ngFor='let it of items;let i=index'  class="col-lg-4 col-md-6">
                         <div class="single-product">
-                            <img class="img-fluid" src="assets/img/product/p1.jpg" alt="">
+                            <img class="img-fluid" [src]='it.imgname' alt="">
                             <div class="product-details">
                                 <h6>{{it.name}}</h6>
                                 <div class="price">
                                     <h6>{{it.price}}</h6>
                                 <!-- <h6 class="l-through">$210.00</h6> -->
-                                {{ab.ref(it.imgname).storage.ref('a2du20fhr5e').getDownloadURL()}}
+                              
                                 </div>
                                 <div class="prd-bottom">
-                                    <button (click)='get()'>cl</button>
+                               
 
                                     <a href="" class="social-info">
                                         <span class="ti-bag"></span>
@@ -233,10 +233,11 @@
                             </div>
                         </div>
                     </div>
+            
                     <!-- single product -->
 
                     <!-- single product -->
-   >
+   
                     <!-- single product -->
               
                     <!-- single product -->
@@ -245,6 +246,7 @@
             </section>
             <!-- End Best Seller -->
             <!-- Start Filter Bar -->
+            <button id='shz' (click)='get1()'>Click</button>
             <div class="filter-bar d-flex flex-wrap align-items-center">
                 <div class="sorting mr-auto">
                     <select>
